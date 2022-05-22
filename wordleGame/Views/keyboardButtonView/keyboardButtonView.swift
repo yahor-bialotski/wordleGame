@@ -8,44 +8,99 @@
 import Foundation
 import UIKit
 
-class KeyboardButtonView: UIView {
-    var keyboardButton: KeyboardButton?
+class KeyboardButtonView: CustomKeyboardBoxButton {
+    private var keyboardButton: KeyboardButton!
     
-    @IBOutlet var buttonView: UIView!
-    @IBOutlet weak var buttonLabel: UILabel!
+    var delegate: KeyboardButtonDelegate?
     
+    init(keyboardButton: KeyboardButton) {
+        self.keyboardButton = keyboardButton
+        
+        super.init(frame: .zero)
+        
+        setUpView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        setUpView()
+    }
+    
+//  MARK: - Initial View Setup
+    
+    private func setUpView() {
+        setTitleFont()
+        setCornerRadius()
+        addConstraint()
+        
+        updateButton(keyboardButton: keyboardButton)
+        
+        pressButton()
+    }
+    
+    private func setTitleFont() {
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+    }
+    
+    private func setCornerRadius() {
+        self.layer.cornerRadius = 5
+    }
+    
+    private func addConstraint() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        let multiplier = keyboardButton?.symbol == .delete || keyboardButton?.symbol == .enter ? 0.75 : 0.5
+        
+        NSLayoutConstraint.activate([self.widthAnchor.constraint(equalTo: self.heightAnchor, multiplier: multiplier)])
+    }
+    
+// MARK: - Update Button
+    
+    private func updateTitle(with text: String) {
+        setTitle(text, for: .normal)
+    }
     
     func updateButton(keyboardButton: KeyboardButton) {
         updateButtonBackground(symbolColor: keyboardButton.symbolColor)
         updateButtonLabel(symbol: keyboardButton.symbol)
     }
-    
-    private func updateButtonLabel(symbol: ButtonStatus) {
+        
+    private func updateButtonLabel(symbol: KeyboardSymbol) {
         switch symbol {
-        case .pressEnter:
-            buttonLabel.text = "Enter"
+        case .enter:
+            updateTitle(with: "Enter")
             
-        case .pressDelete:
-            buttonLabel.text = "<-"
+        case .delete:
+            updateTitle(with: "<-")
             
-        case .pressSymbol(let string):
-            buttonLabel.text = string
+        case .Character(let character):
+            updateTitle(with: character.uppercased())
         }
     }
     
     private func updateButtonBackground(symbolColor: CheckStatus?) {
         switch symbolColor {
         case .wrongLetter:
-            buttonView.backgroundColor = .darkGray
+            self.backgroundColor = .darkGray
             
         case .rightLetter:
-            buttonView.backgroundColor = .yellow
+            self.backgroundColor = .yellow
             
         case .rightFilledLetter:
-            buttonView.backgroundColor = .green
+            self.backgroundColor = .green
             
         default:
-            buttonView.backgroundColor = .lightGray
+            self.backgroundColor = .lightGray
         }
+    }
+
+// MARK: - Action
+    private func pressButton() {
+        self.addTarget(self, action: #selector(handleButtonTap), for: .touchUpInside)
+    }
+    
+    @objc private func handleButtonTap() {
+        delegate?.handleButtonTap(keyboardButton.symbol)
     }
 }

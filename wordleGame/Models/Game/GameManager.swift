@@ -18,16 +18,18 @@ struct GameManager {
     
     private let resultWord: String
     
+    var gameDelegate: GameDelegate?
+    
     init(lettersNumber: Int = 5,
-         attemptsNumer: Int = 6) {
+         attemptsNumber: Int = 5) {
         let row: [LetterSpace?] = Array(repeating: nil, count: lettersNumber)
         
-        self.gameField = Array(repeating: row, count: attemptsNumer)
+        self.gameField = Array(repeating: row, count: attemptsNumber)
             
         self.resultWord = "world"
         
         self.lettersNumber = lettersNumber
-        self.attemptsNumber = attemptsNumer
+        self.attemptsNumber = attemptsNumber
     }
     
     mutating func handleKeyboardSymbolEnter(_ symbol: KeyboardSymbol) {
@@ -81,7 +83,7 @@ struct GameManager {
         currentLetterIndexInRow = 0
         
         if currentAttemptIndex == attemptsNumber {
-            gameOver()
+            gameLoose()
         }
     }
     
@@ -125,10 +127,11 @@ struct GameManager {
     }
     
     private func gameWin() {
-        print("you win!")
+        gameDelegate?.handleWin()
+ 
     }
     
-    private func gameOver() {
-        print("you lose. try again")
+    private func gameLoose() {
+        gameDelegate?.handleLoose()
     }
 }

@@ -11,6 +11,15 @@ import UIKit
 class LetterSpaceView: UIView {
     
     var letterSpace: LetterSpace?
+
+    
+    init(letterSpace: LetterSpace?) {
+        self.letterSpace = letterSpace
+        
+        super.init(frame: .zero)
+        
+        setUpView()
+    }
         
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var labelContentView: UILabel!
@@ -20,22 +29,30 @@ class LetterSpaceView: UIView {
         super.init(frame: frame)
         
         setUpView()
-    }
+    }           
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
         setUpView()
-}
+    }
     
     private func  setUpView() {
         createXib()
+        updateView(letterSpace: letterSpace)
     }
 
     private func createXib() {
-        Bundle.main.loadNibNamed("letterSpaceView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("LetterSpaceView", owner: self, options: nil)
         
         addSubview(contentView)
+        
+        contentView.backgroundColor = .lightGray
+        layer.borderWidth = 3
+        layer.borderColor = UIColor.black.cgColor
+        
+        contentView.frame = bounds
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
     
     func updateView(letterSpace: LetterSpace?) {
@@ -59,7 +76,7 @@ class LetterSpaceView: UIView {
             contentView.backgroundColor = .green
             
         default:
-            contentView.backgroundColor = .clear
+            contentView.backgroundColor = .gray
         }
     }
 }
