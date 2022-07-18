@@ -7,21 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46AE9EEF2815802400F92CB3 /* letterSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE9EEE2815802400F92CB3 /* letterSpace.swift */; };
+		4680628B28244CC600DAE0B1 /* CustomKeybordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680628A28244CC600DAE0B1 /* CustomKeybordView.swift */; };
+		46AC9EEF28212DB700D5CFBC /* KeyboadrdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AC9EEE28212DB700D5CFBC /* KeyboadrdManager.swift */; };
+		46AE9EEF2815802400F92CB3 /* LetterSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE9EEE2815802400F92CB3 /* LetterSpace.swift */; };
 		46AE9EF42818156200F92CB3 /* LetterSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE9EF32818156200F92CB3 /* LetterSpaceView.swift */; };
-		46AE9EF62818157200F92CB3 /* letterSpaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46AE9EF52818157200F92CB3 /* letterSpaceView.xib */; };
+		46AE9EF62818157200F92CB3 /* LetterSpaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46AE9EF52818157200F92CB3 /* LetterSpaceView.xib */; };
+		46B32CA92821219C00570298 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B32CA82821219C00570298 /* KeyboardView.swift */; };
 		46C783172812979700F10088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C783162812979700F10088 /* AppDelegate.swift */; };
 		46C783192812979700F10088 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C783182812979700F10088 /* SceneDelegate.swift */; };
-		46C7831B2812979700F10088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7831A2812979700F10088 /* ViewController.swift */; };
+		46C7831B2812979700F10088 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7831A2812979700F10088 /* GameViewController.swift */; };
 		46C7831E2812979700F10088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C7831C2812979700F10088 /* Main.storyboard */; };
 		46C783202812979B00F10088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C7831F2812979B00F10088 /* Assets.xcassets */; };
 		46C783232812979B00F10088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C783212812979B00F10088 /* LaunchScreen.storyboard */; };
 		46C7832E2812979C00F10088 /* wordleGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7832D2812979C00F10088 /* wordleGameTests.swift */; };
 		46C783382812979C00F10088 /* wordleGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C783372812979C00F10088 /* wordleGameUITests.swift */; };
 		46C7833A2812979C00F10088 /* wordleGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C783392812979C00F10088 /* wordleGameUITestsLaunchTests.swift */; };
-		46C9545A2819972B004F7E9A /* keyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C954592819972A004F7E9A /* keyboardButton.swift */; };
-		46C9545F281A8D00004F7E9A /* keyboardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9545E281A8D00004F7E9A /* keyboardButtonView.swift */; };
-		46C95461281A8E8E004F7E9A /* keyboardButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46C95460281A8E8E004F7E9A /* keyboardButtonView.xib */; };
+		46C9545A2819972B004F7E9A /* KyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C954592819972A004F7E9A /* KyboardButton.swift */; };
+		46C9545F281A8D00004F7E9A /* KeyboardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9545E281A8D00004F7E9A /* KeyboardButtonView.swift */; };
+		46CFA48B282692DE00A9DF86 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CFA48A282692DE00A9DF86 /* GameManager.swift */; };
+		46CFA48E2827F57800A9DF86 /* GameFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CFA48D2827F57800A9DF86 /* GameFieldView.swift */; };
+		46E058A52833AECB0089B7E0 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E058A42833AECB0089B7E0 /* MainMenuViewController.swift */; };
+		46E058A72835026A0089B7E0 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E058A62835026A0089B7E0 /* LeaderboardViewController.swift */; };
+		46E058A9283504060089B7E0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E058A8283504060089B7E0 /* SettingsViewController.swift */; };
+		46E058AD28365A0E0089B7E0 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E058AC28365A0E0089B7E0 /* GameDelegate.swift */; };
+		46E7D94B282FABC300871C9C /* KeyboardButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E7D94A282FABC300871C9C /* KeyboardButtonDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,13 +51,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		46AE9EEE2815802400F92CB3 /* letterSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterSpace.swift; sourceTree = "<group>"; };
+		4680628A28244CC600DAE0B1 /* CustomKeybordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeybordView.swift; sourceTree = "<group>"; };
+		46AC9EEE28212DB700D5CFBC /* KeyboadrdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboadrdManager.swift; sourceTree = "<group>"; };
+		46AE9EEE2815802400F92CB3 /* LetterSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterSpace.swift; sourceTree = "<group>"; };
 		46AE9EF32818156200F92CB3 /* LetterSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterSpaceView.swift; sourceTree = "<group>"; };
-		46AE9EF52818157200F92CB3 /* letterSpaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = letterSpaceView.xib; sourceTree = "<group>"; };
+		46AE9EF52818157200F92CB3 /* LetterSpaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LetterSpaceView.xib; sourceTree = "<group>"; };
+		46B32CA82821219C00570298 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		46C783132812979700F10088 /* wordleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C783162812979700F10088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46C783182812979700F10088 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		46C7831A2812979700F10088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		46C7831A2812979700F10088 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		46C7831D2812979700F10088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46C7831F2812979B00F10088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46C783222812979B00F10088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,9 +70,15 @@
 		46C783332812979C00F10088 /* wordleGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wordleGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C783372812979C00F10088 /* wordleGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordleGameUITests.swift; sourceTree = "<group>"; };
 		46C783392812979C00F10088 /* wordleGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordleGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		46C954592819972A004F7E9A /* keyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardButton.swift; sourceTree = "<group>"; };
-		46C9545E281A8D00004F7E9A /* keyboardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardButtonView.swift; sourceTree = "<group>"; };
-		46C95460281A8E8E004F7E9A /* keyboardButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = keyboardButtonView.xib; sourceTree = "<group>"; };
+		46C954592819972A004F7E9A /* KyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KyboardButton.swift; sourceTree = "<group>"; };
+		46C9545E281A8D00004F7E9A /* KeyboardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonView.swift; sourceTree = "<group>"; };
+		46CFA48A282692DE00A9DF86 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		46CFA48D2827F57800A9DF86 /* GameFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldView.swift; sourceTree = "<group>"; };
+		46E058A42833AECB0089B7E0 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		46E058A62835026A0089B7E0 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		46E058A8283504060089B7E0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		46E058AC28365A0E0089B7E0 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
+		46E7D94A282FABC300871C9C /* KeyboardButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,20 +106,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4678FDCF2823CB19005FFAD8 /* LetterSpace */ = {
+			isa = PBXGroup;
+			children = (
+				46AE9EEE2815802400F92CB3 /* LetterSpace.swift */,
+			);
+			path = LetterSpace;
+			sourceTree = "<group>";
+		};
 		46AE9EED28157D1F00F92CB3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				46AE9EF22818154300F92CB3 /* Game */,
+				4678FDCF2823CB19005FFAD8 /* LetterSpace */,
 				46C9545D281A8CBC004F7E9A /* Keyboard */,
-				46AE9EEE2815802400F92CB3 /* letterSpace.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		46AE9EF22818154300F92CB3 /* New Group */ = {
+		46AE9EF22818154300F92CB3 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				46CFA48A282692DE00A9DF86 /* GameManager.swift */,
 			);
-			path = "New Group";
+			path = Game;
 			sourceTree = "<group>";
 		};
 		46C7830A2812979700F10088 = {
@@ -127,12 +155,12 @@
 		46C783152812979700F10088 /* wordleGame */ = {
 			isa = PBXGroup;
 			children = (
-				46AE9EF22818154300F92CB3 /* New Group */,
+				46E058A12833A6420089B7E0 /* ViewControllers */,
+				46E7D948282FAB8600871C9C /* Delegates */,
 				46AE9EED28157D1F00F92CB3 /* Models */,
 				46C7834628129EE900F10088 /* Views */,
 				46C783162812979700F10088 /* AppDelegate.swift */,
 				46C783182812979700F10088 /* SceneDelegate.swift */,
-				46C7831A2812979700F10088 /* ViewController.swift */,
 				46C7831C2812979700F10088 /* Main.storyboard */,
 				46C7831F2812979B00F10088 /* Assets.xcassets */,
 				46C783212812979B00F10088 /* LaunchScreen.storyboard */,
@@ -161,34 +189,81 @@
 		46C7834628129EE900F10088 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				46C9545C281A7D9D004F7E9A /* keyboardButtonView */,
-				46C9545B281A7D83004F7E9A /* letterSpaceView */,
+				46CFA48C2827F53B00A9DF86 /* GameField */,
+				46C9545C281A7D9D004F7E9A /* KeyboardButtonView */,
+				46C9545B281A7D83004F7E9A /* LetterSpaceView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		46C9545B281A7D83004F7E9A /* letterSpaceView */ = {
+		46C9545B281A7D83004F7E9A /* LetterSpaceView */ = {
 			isa = PBXGroup;
 			children = (
 				46AE9EF32818156200F92CB3 /* LetterSpaceView.swift */,
-				46AE9EF52818157200F92CB3 /* letterSpaceView.xib */,
+				46AE9EF52818157200F92CB3 /* LetterSpaceView.xib */,
 			);
-			path = letterSpaceView;
+			path = LetterSpaceView;
 			sourceTree = "<group>";
 		};
-		46C9545C281A7D9D004F7E9A /* keyboardButtonView */ = {
+		46C9545C281A7D9D004F7E9A /* KeyboardButtonView */ = {
 			isa = PBXGroup;
 			children = (
-				46C9545E281A8D00004F7E9A /* keyboardButtonView.swift */,
-				46C95460281A8E8E004F7E9A /* keyboardButtonView.xib */,
+				46C9545E281A8D00004F7E9A /* KeyboardButtonView.swift */,
+				46B32CA82821219C00570298 /* KeyboardView.swift */,
+				4680628A28244CC600DAE0B1 /* CustomKeybordView.swift */,
 			);
-			path = keyboardButtonView;
+			path = KeyboardButtonView;
 			sourceTree = "<group>";
 		};
 		46C9545D281A8CBC004F7E9A /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
-				46C954592819972A004F7E9A /* keyboardButton.swift */,
+				46C954592819972A004F7E9A /* KyboardButton.swift */,
+				46AC9EEE28212DB700D5CFBC /* KeyboadrdManager.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		46CFA48C2827F53B00A9DF86 /* GameField */ = {
+			isa = PBXGroup;
+			children = (
+				46CFA48D2827F57800A9DF86 /* GameFieldView.swift */,
+			);
+			path = GameField;
+			sourceTree = "<group>";
+		};
+		46E058A12833A6420089B7E0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				46C7831A2812979700F10088 /* GameViewController.swift */,
+				46E058A42833AECB0089B7E0 /* MainMenuViewController.swift */,
+				46E058A62835026A0089B7E0 /* LeaderboardViewController.swift */,
+				46E058A8283504060089B7E0 /* SettingsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		46E058AB283659DF0089B7E0 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				46E058AC28365A0E0089B7E0 /* GameDelegate.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		46E7D948282FAB8600871C9C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				46E058AB283659DF0089B7E0 /* Alerts */,
+				46E7D949282FAB9000871C9C /* Keyboard */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		46E7D949282FAB9000871C9C /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				46E7D94A282FABC300871C9C /* KeyboardButtonDelegate.swift */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -299,9 +374,8 @@
 			files = (
 				46C783232812979B00F10088 /* LaunchScreen.storyboard in Resources */,
 				46C783202812979B00F10088 /* Assets.xcassets in Resources */,
-				46C95461281A8E8E004F7E9A /* keyboardButtonView.xib in Resources */,
 				46C7831E2812979700F10088 /* Main.storyboard in Resources */,
-				46AE9EF62818157200F92CB3 /* letterSpaceView.xib in Resources */,
+				46AE9EF62818157200F92CB3 /* LetterSpaceView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,12 +401,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				46AE9EF42818156200F92CB3 /* LetterSpaceView.swift in Sources */,
-				46C7831B2812979700F10088 /* ViewController.swift in Sources */,
-				46C9545A2819972B004F7E9A /* keyboardButton.swift in Sources */,
-				46C9545F281A8D00004F7E9A /* keyboardButtonView.swift in Sources */,
+				46AC9EEF28212DB700D5CFBC /* KeyboadrdManager.swift in Sources */,
+				46B32CA92821219C00570298 /* KeyboardView.swift in Sources */,
+				46CFA48E2827F57800A9DF86 /* GameFieldView.swift in Sources */,
+				46CFA48B282692DE00A9DF86 /* GameManager.swift in Sources */,
+				46C7831B2812979700F10088 /* GameViewController.swift in Sources */,
+				46E058A52833AECB0089B7E0 /* MainMenuViewController.swift in Sources */,
+				46E058A9283504060089B7E0 /* SettingsViewController.swift in Sources */,
+				46E058A72835026A0089B7E0 /* LeaderboardViewController.swift in Sources */,
+				4680628B28244CC600DAE0B1 /* CustomKeybordView.swift in Sources */,
+				46C9545A2819972B004F7E9A /* KyboardButton.swift in Sources */,
+				46E7D94B282FABC300871C9C /* KeyboardButtonDelegate.swift in Sources */,
+				46C9545F281A8D00004F7E9A /* KeyboardButtonView.swift in Sources */,
 				46C783172812979700F10088 /* AppDelegate.swift in Sources */,
 				46C783192812979700F10088 /* SceneDelegate.swift in Sources */,
-				46AE9EEF2815802400F92CB3 /* letterSpace.swift in Sources */,
+				46E058AD28365A0E0089B7E0 /* GameDelegate.swift in Sources */,
+				46AE9EEF2815802400F92CB3 /* LetterSpace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

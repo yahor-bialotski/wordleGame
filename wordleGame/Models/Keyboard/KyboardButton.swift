@@ -8,13 +8,13 @@
 import Foundation
 
 struct KeyboardButton {
-    let symbol: ButtonStatus
+    let symbol: KeyboardSymbol
     let symbolColor: CheckStatus?
 }
 
-enum ButtonStatus {
-    case pressEnter
-    case pressDelete
-    case pressSymbol(String)
+enum KeyboardSymbol: Equatable {
+    case enter
+    case delete
+    case Character(String)
 }
     

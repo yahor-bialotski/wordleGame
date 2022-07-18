@@ -9,7 +9,7 @@ import Foundation
 
 struct LetterSpace {
     let letter: String?
-    let checkStatus: CheckStatus?
+    var checkStatus: CheckStatus?
 }
     
 enum CheckStatus {
