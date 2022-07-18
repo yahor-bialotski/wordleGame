@@ -11,14 +11,23 @@ class GameViewController: UIViewController {
     @IBOutlet weak var letterSpaceView: LetterSpaceView!
     @IBOutlet weak var keyboardContainer: KeyboardView!
     
-    private var gameManager = GameManager(lettersNumber: 5, attemptsNumber: 5)
     private let keyboardManager = KeyboardManager()
+    
+    var selectedAttemptsNumber = UserDefaultsService.shared.getSavedAttemptsNumber(key: "attemptsNumber")
+    
+    var gameManager = GameManager()
     
     @IBOutlet weak var gameFieldView: GameFieldView!
     
+    var swichLeaderboardRec: LeaderboardRecordsSwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.gameManager = GameManager(lettersNumber: 5, attemptsNumber: selectedAttemptsNumber ?? 5)
+        
+        gameManager.randomiseWord()
+        
         keyboardContainer.delegate = self
         keyboardContainer.updateKeyboardSymbols(keyboardManager.keyboardSymbols)
         
@@ -26,40 +35,24 @@ class GameViewController: UIViewController {
         gameManager.gameDelegate = self
     }
     
-    private func createLetterSpaceView() {
-        let letterSpaceView = LetterSpaceView()
-        letterSpaceView.updateView(letterSpace: nil)
+    // MARK: - Handle restart game & Settings
+    
+    func setUpRecordingMode(userName: String) {
+        let leaderboardMode = UserDefaultsService.shared.getSavedRecordMode(key: "leaderboardRecords")
         
-        letterSpaceView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            letterSpaceView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            letterSpaceView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            letterSpaceView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3),
-            letterSpaceView.widthAnchor.constraint(equalTo: letterSpaceView.heightAnchor)
-        ])
-    }
-
-     func showLooseAlert() {
-        let alertLooseController = UIAlertController(title: nil,
-                                                message: "You loose",
-                                                preferredStyle: .alert)
-       
-        let restartAction = UIAlertAction(title: "Try again",
-                                           style: .default,
-                                           handler: nil)
-        
-        let exitAction = UIAlertAction(title: "Main menu",
-                                           style: .cancel,
-                                           handler: nil)
-        
-        alertLooseController.addAction(restartAction)
-        alertLooseController.addAction(exitAction)
-        
-        present(alertLooseController, animated: true)
+        if let leaderboardRecordSetUp = LeaderboardRecordsSwitch(rawValue: leaderboardMode!) {
+            switch leaderboardRecordSetUp {
+            case .recordsEnabled:
+                gameManager.saveData(userName: userName)
+            case .recordsDisabled:
+                return
+            }
+        }
     }
     
-    private func restartGame() {
+    func restartGame() {
         gameManager = GameManager()
+        gameManager.gameDelegate = self
         gameFieldView.updateGameField(gameManager.gameField)
     }
 }
@@ -67,7 +60,6 @@ class GameViewController: UIViewController {
 extension GameViewController: KeyboardButtonDelegate {
     func handleButtonTap(_ symbol: KeyboardSymbol) {
         gameManager.handleKeyboardSymbolEnter(symbol)
-        gameManager.gameDelegate = self
         gameFieldView.updateGameField(gameManager.gameField)
     }
 }
@@ -77,19 +69,31 @@ extension GameViewController: GameDelegate {
         showAlert(title: "You win", message: "Congratulations!")
     }
     
-    func handleLoose() {
+    func handleLose() {
         showAlert(title: "You lose.", message: "Try once again!")
     }
     
+    // MARK: - Game ending alert
     
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title,
                                                 message: message,
                                                 preferredStyle: .alert)
         
+        alertController.addTextField()
+        alertController.textFields?.first?.placeholder = "Enter your name"
+        
         let restartAction = UIAlertAction(title: "Restart",
                                           style: .default) { _ in
-            self.restartGame()
+            
+            let userName = alertController.textFields?.first?.text ?? "username"
+            
+            if userName.isEmpty {
+                self.showAlert(title: title, message: message)
+            } else {
+                self.restartGame()
+                self.setUpRecordingMode(userName: userName)
+            }
         }
         
         let exitAction = UIAlertAction(title: "Main menu",
@@ -104,5 +108,3 @@ extension GameViewController: GameDelegate {
         present(alertController, animated: true)
     }
 }
-
-

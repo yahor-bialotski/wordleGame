@@ -27,7 +27,7 @@ class KeyboardButtonView: CustomKeyboardBoxButton {
         setUpView()
     }
     
-//  MARK: - Initial View Setup
+    //  MARK: - Initial View Setup
     
     private func setUpView() {
         setTitleFont()
@@ -55,7 +55,7 @@ class KeyboardButtonView: CustomKeyboardBoxButton {
         NSLayoutConstraint.activate([self.widthAnchor.constraint(equalTo: self.heightAnchor, multiplier: multiplier)])
     }
     
-// MARK: - Update Button
+    // MARK: - Update Button
     
     private func updateTitle(with text: String) {
         setTitle(text, for: .normal)
@@ -74,7 +74,7 @@ class KeyboardButtonView: CustomKeyboardBoxButton {
         case .delete:
             updateTitle(with: "<-")
             
-        case .Character(let character):
+        case .character(let character):
             updateTitle(with: character.uppercased())
         }
     }
@@ -95,7 +95,7 @@ class KeyboardButtonView: CustomKeyboardBoxButton {
         }
     }
 
-// MARK: - Action
+    // MARK: - Action
     private func pressButton() {
         self.addTarget(self, action: #selector(handleButtonTap), for: .touchUpInside)
     }

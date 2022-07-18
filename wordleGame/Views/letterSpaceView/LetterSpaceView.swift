@@ -9,9 +9,10 @@ import Foundation
 import UIKit
 
 class LetterSpaceView: UIView {
+    @IBOutlet var contentView: UIView!
+    @IBOutlet weak var labelContentView: UILabel!
     
     var letterSpace: LetterSpace?
-
     
     init(letterSpace: LetterSpace?) {
         self.letterSpace = letterSpace
@@ -20,16 +21,12 @@ class LetterSpaceView: UIView {
         
         setUpView()
     }
-        
-    @IBOutlet var contentView: UIView!
-    @IBOutlet weak var labelContentView: UILabel!
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setUpView()
-    }           
+    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -41,7 +38,7 @@ class LetterSpaceView: UIView {
         createXib()
         updateView(letterSpace: letterSpace)
     }
-
+    
     private func createXib() {
         Bundle.main.loadNibNamed("LetterSpaceView", owner: self, options: nil)
         

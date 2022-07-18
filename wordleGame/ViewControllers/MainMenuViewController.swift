@@ -13,7 +13,6 @@ class MainMenuViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    
     @IBAction func pressStartButton(_ sender: Any) {
         let gameViewController = UIStoryboard(name: "Main", bundle: nil)
                     .instantiateViewController(withIdentifier: "gameVC")
@@ -33,5 +32,9 @@ class MainMenuViewController: UIViewController {
                     .instantiateViewController(withIdentifier: "settingsVC")
         
         navigationController?.pushViewController(settingsViewController, animated: true)
+    }
+    
+    @IBAction func pressExitButton(_ sender: Any) {
+        exit(0)
     }
 }

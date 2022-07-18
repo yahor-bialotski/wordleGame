@@ -12,7 +12,7 @@ class KeyboardView: UIStackView {
     var keyboardSymbols: [[KeyboardButton]]
     
     var delegate: KeyboardButtonDelegate?
-                        
+    
     init(keyboardSymbols: [[KeyboardButton]]) {
         self.keyboardSymbols = keyboardSymbols
         
@@ -23,7 +23,7 @@ class KeyboardView: UIStackView {
     
     required init(coder: NSCoder) {
         self.keyboardSymbols = []
-            
+        
         super.init(coder: coder)
         
         self.setUpView()
@@ -40,17 +40,17 @@ class KeyboardView: UIStackView {
     
     private func createKeyboard() {
         for row in keyboardSymbols {
-        let stackView = UIStackView()
+            let stackView = UIStackView()
             stackView.axis = .horizontal
             stackView.alignment = .fill
             stackView.distribution = .fill
             stackView.spacing = 6
-        
-        self.addArrangedSubview(stackView)
+            
+            self.addArrangedSubview(stackView)
             
             for button in row {
                 let keyboardButtonView = KeyboardButtonView(keyboardButton: button)
-                keyboardButtonView.delegate = delegate 
+                keyboardButtonView.delegate = delegate
                 
                 stackView.addArrangedSubview(keyboardButtonView)
             }

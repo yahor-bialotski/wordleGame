@@ -26,7 +26,7 @@ class GameFieldView: UIStackView {
         
         self.setUpView()
     }
-
+    
     private func setUpView() {
         self.axis = .vertical
         self.alignment = .fill
@@ -38,18 +38,16 @@ class GameFieldView: UIStackView {
     
     private func createField() {
         for row in gameField {
-        let stackView = UIStackView()
+            let stackView = UIStackView()
             stackView.axis = .horizontal
             stackView.alignment = .fill
             stackView.distribution = .fillEqually
             stackView.spacing = 6
             
-        
-        self.addArrangedSubview(stackView)
-                
+            self.addArrangedSubview(stackView)
+            
             for letter in row {
                 let letterBoxView = LetterSpaceView(letterSpace: letter)
-
                 
                 stackView.addArrangedSubview(letterBoxView)
                 
@@ -60,13 +58,13 @@ class GameFieldView: UIStackView {
         }
     }
     
-        func updateGameField(_ gameField: [[LetterSpace?]]) {
-            self.gameField = gameField
-            
-            for subview in subviews {
-                subview.removeFromSuperview()
-            }
-            
-            self.createField()
+    func updateGameField(_ gameField: [[LetterSpace?]]) {
+        self.gameField = gameField
+        
+        for subview in subviews {
+            subview.removeFromSuperview()
         }
+        
+        self.createField()
+    }
 }

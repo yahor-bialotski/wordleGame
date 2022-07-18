@@ -16,21 +16,38 @@ struct GameManager {
     
     var gameField: [[LetterSpace?]]
     
-    private let resultWord: String
+    private var resultWord: Substring
     
-    var gameDelegate: GameDelegate?
+    var gameDelegate: GameDelegate!
     
     init(lettersNumber: Int = 5,
          attemptsNumber: Int = 5) {
         let row: [LetterSpace?] = Array(repeating: nil, count: lettersNumber)
         
         self.gameField = Array(repeating: row, count: attemptsNumber)
-            
-        self.resultWord = "world"
+        
+        self.resultWord = ""
         
         self.lettersNumber = lettersNumber
         self.attemptsNumber = attemptsNumber
     }
+    
+    // MARK: - Randomise word
+    
+    mutating func randomiseWord() {
+        guard let path = Bundle.main.path(forResource: "AllowedWords", ofType: "txt"),
+              let allowedWordsArray = try? String(contentsOfFile: path,
+                                                  encoding: String.Encoding.utf8).split(separator: "\n") else {
+            return
+        }
+        
+        let allowedWords = Set(allowedWordsArray)
+        
+        resultWord = allowedWords.randomElement() ?? "world"
+        print(resultWord)
+    }
+    
+    // MARK: - Buttons
     
     mutating func handleKeyboardSymbolEnter(_ symbol: KeyboardSymbol) {
         switch symbol {
@@ -38,7 +55,7 @@ struct GameManager {
             checkWord()
         case .delete:
             deleteLastLetter()
-        case .Character(let letter):
+        case .character(let letter):
             addLetter(letter)
         }
     }
@@ -46,7 +63,6 @@ struct GameManager {
     // MARK: - Press enter
     private mutating func checkWord() {
         if currentLetterIndexInRow < lettersNumber || currentAttemptIndex >= attemptsNumber {
-            
             return
         }
         
@@ -83,7 +99,7 @@ struct GameManager {
         currentLetterIndexInRow = 0
         
         if currentAttemptIndex == attemptsNumber {
-            gameLoose()
+            handleGameLose()
         }
     }
     
@@ -128,10 +144,20 @@ struct GameManager {
     
     private func gameWin() {
         gameDelegate?.handleWin()
- 
     }
     
-    private func gameLoose() {
-        gameDelegate?.handleLoose()
+    private func handleGameLose() {
+        gameDelegate?.handleLose()
+    }
+    
+    func saveData(userName: String) {
+        let gameResult = GameResults(userName: userName,
+                                     attemptsNumber: currentAttemptIndex + 1,
+                                     time: 100)
+        
+        UserDefaultsService.shared.saveGameResult(gameResult)
+        
+        let gameResults = UserDefaultsService.shared.getGameResults()
+        print(gameResults)
     }
 }

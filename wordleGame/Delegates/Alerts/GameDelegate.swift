@@ -9,5 +9,5 @@ import Foundation
 
 protocol GameDelegate {
     func handleWin()
-    func handleLoose()
+    func handleLose()
 }

@@ -15,6 +15,5 @@ struct KeyboardButton {
 enum KeyboardSymbol: Equatable {
     case enter
     case delete
-    case Character(String)
+    case character(String)
 }
-    

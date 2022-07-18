@@ -18,7 +18,7 @@ struct KeyboardManager {
         ]
 
         self.keyboardSymbols = letters.enumerated().map { index, row in
-                let symbolsRow = row.map { character in KeyboardButton(symbol: .Character(character), symbolColor: nil) }
+                let symbolsRow = row.map { character in KeyboardButton(symbol: .character(character), symbolColor: nil) }
 
                 if index == letters.count - 1 {
                     return [KeyboardButton(symbol: .enter, symbolColor: nil)] + symbolsRow + [KeyboardButton(symbol: .delete, symbolColor: nil)]
