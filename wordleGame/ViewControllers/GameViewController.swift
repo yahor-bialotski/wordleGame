@@ -38,9 +38,8 @@ class GameViewController: UIViewController {
     // MARK: - Handle restart game & Settings
     
     func setUpRecordingMode(userName: String) {
-        let leaderboardMode = UserDefaultsService.shared.getSavedRecordMode(key: "leaderboardRecords")
-        
-        if let leaderboardRecordSetUp = LeaderboardRecordsSwitch(rawValue: leaderboardMode!) {
+       if let leaderboardMode = UserDefaultsService.shared.getSavedRecordMode(key: "leaderboardRecords"),
+          let leaderboardRecordSetUp = LeaderboardRecordsSwitch(rawValue: leaderboardMode) {
             switch leaderboardRecordSetUp {
             case .recordsEnabled:
                 gameManager.saveData(userName: userName)

@@ -152,12 +152,8 @@ struct GameManager {
     
     func saveData(userName: String) {
         let gameResult = GameResults(userName: userName,
-                                     attemptsNumber: currentAttemptIndex + 1,
-                                     time: 100)
+                                     attemptsNumber: currentAttemptIndex + 1)
         
         UserDefaultsService.shared.saveGameResult(gameResult)
-        
-        let gameResults = UserDefaultsService.shared.getGameResults()
-        print(gameResults)
     }
 }

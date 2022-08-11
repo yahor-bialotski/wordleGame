@@ -10,7 +10,6 @@ import Foundation
 struct GameResults: Codable {
     let userName: String
     let attemptsNumber: Int
-    let time: Int
 }
 
 enum LeaderboardRecordsSwitch: String {

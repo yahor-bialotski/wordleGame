@@ -8,8 +8,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    @IBOutlet weak var swichSound: UISwitch!
-    @IBOutlet weak var swichLeaderboardRec: UISwitch!
+    @IBOutlet weak var switchSound: UISwitch!
+    @IBOutlet weak var switchLeaderboardRec: UISwitch!
     
     @IBOutlet weak var stepperButton: UIStepper!
     @IBOutlet weak var attemptsNumberField: UILabel!
@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func pressSoundButton(_ sender: Any) {
-        if swichSound.isOn {
+        if switchSound.isOn {
             print("sound ON")
         }
         else {
@@ -40,7 +40,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func pressGamefieldButton(_ sender: Any) {
-        if swichLeaderboardRec.isOn {
+        if switchLeaderboardRec.isOn {
             UserDefaultsService.shared.saveRecordMode(mode: .recordsEnabled, key: "leaderboardRecords")
         }
         else {
@@ -54,9 +54,9 @@ class SettingsViewController: UIViewController {
         if let leaderboardRecordSetUp = LeaderboardRecordsSwitch(rawValue: switcherPosition!) {
             switch leaderboardRecordSetUp {
             case .recordsEnabled:
-                swichLeaderboardRec.isOn = true
+                switchLeaderboardRec.isOn = true
             case .recordsDisabled:
-                swichLeaderboardRec.isOn = false
+                switchLeaderboardRec.isOn = false
             }
         }
     }

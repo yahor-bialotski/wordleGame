@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bgU-Jw-2o3">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,15 +12,15 @@
             <objects>
                 <viewController storyboardIdentifier="gameVC" id="BYZ-38-t0r" customClass="GameViewController" customModule="wordleGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pyt-kr-nke" customClass="GameFieldView" customModule="wordleGame" customModuleProvider="target">
-                                <rect key="frame" x="15" y="54" width="384" height="788"/>
+                                <rect key="frame" x="15" y="54" width="570" height="788"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4qh-Do-YTL" customClass="KeyboardView" customModule="wordleGame" customModuleProvider="target">
-                                <rect key="frame" x="20" y="34" width="374" height="808"/>
+                                <rect key="frame" x="20" y="34" width="560" height="808"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -51,11 +50,11 @@
             <objects>
                 <viewController storyboardIdentifier="settingsVC" id="FZn-eH-xVZ" customClass="SettingsViewController" customModule="wordleGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dNr-aN-8D1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="hOZ-En-Re8">
-                                <rect key="frame" x="37" y="256.5" width="340" height="257.5"/>
+                                <rect key="frame" x="130" y="126.5" width="340" height="257.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kv-D4-SZm">
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="55.5"/>
@@ -147,8 +146,8 @@
                     <connections>
                         <outlet property="attemptsNumberField" destination="dm4-2E-zDF" id="6rO-Mo-iTR"/>
                         <outlet property="stepperButton" destination="iu5-07-EGM" id="w20-hg-C6E"/>
-                        <outlet property="swichLeaderboardRec" destination="0Gn-cK-bXn" id="phN-gJ-g8X"/>
-                        <outlet property="swichSound" destination="G7B-Vh-LaM" id="PMN-02-q8g"/>
+                        <outlet property="switchLeaderboardRec" destination="0Gn-cK-bXn" id="phN-gJ-g8X"/>
+                        <outlet property="switchSound" destination="G7B-Vh-LaM" id="PMN-02-q8g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vzr-NN-hIs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -160,7 +159,7 @@
             <objects>
                 <viewController storyboardIdentifier="leaderboardVC" id="QB0-3c-jFu" customClass="LeaderboardViewController" customModule="wordleGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hJt-j7-QkY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Leaderboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptR-Ys-26N">
@@ -170,7 +169,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yHD-Au-cgq">
-                                <rect key="frame" x="10" y="244" width="394" height="418"/>
+                                <rect key="frame" x="10" y="200" width="580" height="200"/>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGray3Color"/>
                             </tableView>
@@ -216,7 +215,7 @@
             <objects>
                 <viewController storyboardIdentifier="mainMenuVC" id="4mf-qR-EyD" customClass="MainMenuViewController" customModule="wordleGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eDz-7b-kcF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WORDLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihD-67-nbd">
@@ -226,10 +225,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="gVM-zB-VJs">
-                                <rect key="frame" x="92" y="338" width="230" height="199"/>
+                                <rect key="frame" x="92" y="294" width="416" height="199"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0i-Ic-RI4">
-                                        <rect key="frame" x="0.0" y="0.0" width="230" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="416" height="31"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -241,7 +240,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvq-Ba-Aqz">
-                                        <rect key="frame" x="0.0" y="56" width="230" height="31"/>
+                                        <rect key="frame" x="0.0" y="56" width="416" height="31"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -253,7 +252,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nr7-KM-3OB">
-                                        <rect key="frame" x="0.0" y="112" width="230" height="31"/>
+                                        <rect key="frame" x="0.0" y="112" width="416" height="31"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -265,7 +264,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcN-Nx-6jn">
-                                        <rect key="frame" x="0.0" y="168" width="230" height="31"/>
+                                        <rect key="frame" x="0.0" y="168" width="416" height="31"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
